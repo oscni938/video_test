@@ -1,8 +1,5 @@
 //on site
-var customDimensions = {
-  SERVICE_WORKER_STATUS: 'dimension1'
-};
-ga('set', customDimensions.SERVICE_WORKER_STATUS, getServiceWorkerStatus());
+
 
 if('serviceWorker' in navigator)
 {
@@ -29,6 +26,10 @@ displayView = function(view){
 window.onload = function(){
    page = document.getElementById("page");
  displayView(page);
+ var customDimensions = {
+   SERVICE_WORKER_STATUS: 'dimension1'
+ };
+ ga('set', customDimensions.SERVICE_WORKER_STATUS, getServiceWorkerStatus());
 }
 
 function getTimeToFirstPaintIfSupported() {
