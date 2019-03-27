@@ -63,7 +63,7 @@ function sendTimeToFirstPaint() {
       eventAction: 'firstpaint',
       // Rounds to the nearest millisecond since
       // event values in Google Analytics must be integers.
-      eventValue: Math.round(timeToFirstPaint)
+      eventValue: Math.round(timeToFirstPaint),
       // Sends this as a non-interaction event,
       // so it doesn't affect bounce rate.
       nonInteraction: true
