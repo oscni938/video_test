@@ -1,4 +1,4 @@
-const cacheName = "stat";//jmeter för bench
+const cacheName = "stat";
 
 const cacheAssets = [
   'video_site.html',

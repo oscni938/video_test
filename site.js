@@ -14,8 +14,8 @@ displayView = function(view){
   document.getElementById("body").innerHTML = view.innerHTML;
    // the code required to display a view
 };
+
 window.onload = function(){
    page = document.getElementById("page");
  displayView(page);
-
 }
