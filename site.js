@@ -75,7 +75,7 @@ function sendTimeToFirstPaint() {
       nonInteraction: true
       
       //dimension1: getServiceWorkerStatus()
-    });
+    };
    fields[customDimensions.METRIC_VALUE] = String(fields.eventValue);
 
     ga('send', 'event', fields);
