@@ -10,7 +10,7 @@ if('serviceWorker' in navigator)
 
     // Sends an event with the time to first paint data.
     sendTimeToFirstPaint();
-
+    sendTimePageLoadTime();
     navigator.serviceWorker
     .register('SW_stat.js')
     .then(reg => console.log('service worker: registered'))
@@ -42,7 +42,7 @@ function getTimeToFirstPaintIfSupported() {
     // If chrome, get first paint time from `chrome.loadTimes`.
     if (window.chrome && window.chrome.loadTimes) {
       fpTime = window.performance.getEntriesByType('paint');
-      fpTime = fpTime.startTime/1000;
+      fpTime = fpTime.startTime;
       //fpTime.forEach((fpTime) =>{console.log(fpTime.name+fpTime.startTime)});
     }
     // If IE/Edge, use the prefixed `msFirstPaint` property.
@@ -73,7 +73,9 @@ function sendTimeToFirstPaint() {
     });
   }
 }
-
+function sendTimePageLoadTime(){
+ console.log(window.performance.timing.domContentLoadedEventEnd- window.performance.timing.navigationStart);
+}
 function getServiceWorkerStatus() {
   if ('serviceWorker' in navigator) {
     return navigator.serviceWorker.controller ? 'controlled' : 'supported';
