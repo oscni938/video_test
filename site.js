@@ -1,6 +1,6 @@
 //on site
  var customDimensions = {
-   SERVICE_WORKER_STATUS: 'dimension1'
+   SERVICE_WORKER_STATUS: 'dimension1',
    METRIC_VALUE: 'dimension2'
  };
 
