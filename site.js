@@ -31,7 +31,7 @@ displayView = function(view){
 window.onload = function(){
    page = document.getElementById("page");
  displayView(page);
-  ga('create', 'UA-137024514-2', {'sampleRate': 100});
+  //ga('create', 'UA-137024514-2', {'sampleRate': 100});
   ga('set', customDimensions.SERVICE_WORKER_STATUS, getServiceWorkerStatus());
 }
 
