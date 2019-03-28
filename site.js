@@ -1,5 +1,10 @@
 //on site
+ var customDimensions = {
+   SERVICE_WORKER_STATUS: 'dimension1'
+   METRIC_VALUE: 'dimension2'
+ };
 
+ ga('set', customDimensions.SERVICE_WORKER_STATUS, getServiceWorkerStatus());
 
 if('serviceWorker' in navigator)
 {
@@ -26,10 +31,7 @@ displayView = function(view){
 window.onload = function(){
    page = document.getElementById("page");
  displayView(page);
- var customDimensions = {
-   SERVICE_WORKER_STATUS: 'dimension1'
- };
- ga('set', customDimensions.SERVICE_WORKER_STATUS, getServiceWorkerStatus());
+  
 }
 
 function getTimeToFirstPaintIfSupported() {
@@ -62,7 +64,7 @@ function sendTimeToFirstPaint() {
     console.log("PAINT1");
   //if (timeToFirstPaint) {
     console.log("PAINT2");
-    /*ga('send', 'event', {
+    var fields = {
       eventCategory: 'Performance',
       eventAction: 'firstpaint',
       // Rounds to the nearest millisecond since
@@ -70,9 +72,14 @@ function sendTimeToFirstPaint() {
       eventValue: Math.round(timeToFirstPaint),
       // Sends this as a non-interaction event,
       // so it doesn't affect bounce rate.
-      nonInteraction: true
-    });*/
-    ga('set','metric1', timeToFirstPaint);
+      nonInteraction: true,
+      
+      //dimension1: getServiceWorkerStatus()
+    });
+   fields[customDimensions.METRIC_VALUE] = String(fields.eventValue);
+
+    ga('send', 'event', fields);
+    //ga('set','metric1', timeToFirstPaint);
     console.log("PAINT3");
   //}
 }
