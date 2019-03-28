@@ -72,7 +72,7 @@ function sendTimeToFirstPaint() {
       eventValue: Math.round(timeToFirstPaint),
       // Sends this as a non-interaction event,
       // so it doesn't affect bounce rate.
-      nonInteraction: true,
+      nonInteraction: true
       
       //dimension1: getServiceWorkerStatus()
     });
