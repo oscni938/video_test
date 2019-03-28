@@ -60,7 +60,7 @@ function getTimeToFirstPaintIfSupported() {
 function sendTimeToFirstPaint() {
   var timeToFirstPaint = getTimeToFirstPaintIfSupported();
     console.log("PAINT1");
-  if (timeToFirstPaint) {
+  //if (timeToFirstPaint) {
     console.log("PAINT2");
     /*ga('send', 'event', {
       eventCategory: 'Performance',
@@ -74,7 +74,7 @@ function sendTimeToFirstPaint() {
     });*/
     ga('set','metric1', timeToFirstPaint);
     console.log("PAINT3");
-  }
+  //}
 }
 function sendTimePageLoadTime(){
  console.log(window.performance.timing.domContentLoadedEventEnd- window.performance.timing.navigationStart);
