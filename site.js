@@ -41,7 +41,7 @@ function getTimeToFirstPaintIfSupported() {
 
     // If chrome, get first paint time from `chrome.loadTimes`.
     if (window.chrome && window.chrome.loadTimes) {
-      fpTime = firstPaintTime() * 1000;
+      fpTime = window.performance.firstPaintTime() * 1000;
     }
     // If IE/Edge, use the prefixed `msFirstPaint` property.
     // See http://msdn.microsoft.com/ff974719
