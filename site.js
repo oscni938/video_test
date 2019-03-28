@@ -61,7 +61,7 @@ function sendTimeToFirstPaint() {
   var timeToFirstPaint = getTimeToFirstPaintIfSupported();
 
   if (timeToFirstPaint) {
-    ga('send', 'event', {
+    /*ga('send', 'event', {
       eventCategory: 'Performance',
       eventAction: 'firstpaint',
       // Rounds to the nearest millisecond since
@@ -70,7 +70,8 @@ function sendTimeToFirstPaint() {
       // Sends this as a non-interaction event,
       // so it doesn't affect bounce rate.
       nonInteraction: true
-    });
+    });*/
+    ga('set','metric1', timeToFirstPaint);
   }
 }
 function sendTimePageLoadTime(){
