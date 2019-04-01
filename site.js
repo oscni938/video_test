@@ -4,7 +4,8 @@
    METRIC_VALUE: 'dimension2'
  };
 
- 
+  var d = new Date();
+  var t= d.getTime();
 
 if('serviceWorker' in navigator)
 {
