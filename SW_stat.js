@@ -6,7 +6,7 @@ const cacheAssets = [
   'site.js',
   'Everytime_I_play_Skyrim.mp4',
   'SLAV_KING_Boris_vs_DJ_Blyatman.mp4',
-  'What_is_a_service_workers.mp4'
+  'How_To_Hack_Into_a_Computer.mp4'
     ];
 
 //call install
