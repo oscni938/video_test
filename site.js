@@ -74,7 +74,7 @@ function getTimeToFirstPaintIfSupported() {
     }
 
     if (fpTime) {
-     console.log("kappa");
+     console.log(myTime);
       return myTime;
     }
   }
