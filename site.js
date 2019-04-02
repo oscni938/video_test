@@ -126,9 +126,9 @@ function sendServiceWorkerStatus(id)
 {
   var swStatus = getServiceWorkerStatus();
     analytics.track('Video site', {
-   category: 'Service Worker status',
+   category: 'Service Worker status:'+swStatus,
    label: id,
-   value: swStatus
+   value: 1
  });
 }
 
