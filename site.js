@@ -15,16 +15,31 @@ if('serviceWorker' in navigator)
 
     // Sends an event with the time to first paint data.
     var d = new Date();
-    t= d.getTime();
+    var t= d.getTime();
     sendTimeToFirstPaint(t);
     sendTimePageLoadTime(t);
     navigator.serviceWorker
     .register('SW_stat.js')
     .then(reg => console.log('service worker: registered'))
     .catch(err => console.log(`service worker: error: ${err}`));
- 
+    sendServiceWorkerStatus(t);
   });
-   sendServiceWorkerStatus(t);
+   
+}
+else
+{
+  window.addEventListener('load', () =>
+  {
+    // Sends a pageview for the initial pageload.
+    ga('send', 'pageview');
+
+    // Sends an event with the time to first paint data.
+    var d = new Date();
+    var t= d.getTime();
+    sendTimeToFirstPaint(t);
+    sendTimePageLoadTime(t);
+    sendServiceWorkerStatus(t);
+  });
 }
 
 displayView = function(view){
