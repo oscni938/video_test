@@ -74,7 +74,7 @@ function getTimeToFirstPaintIfSupported() {
     }
 
     if (fpTime) {
-     console.log(myTime);
+    
       return myTime;
     }
   }
@@ -82,6 +82,7 @@ function getTimeToFirstPaintIfSupported() {
 
 function sendTimeToFirstPaint(id) {
   var timeToFirstPaint = getTimeToFirstPaintIfSupported();
+  console.log(timeToFirstPaint);
   analytics.track('Video site', {
   category: 'Time to paint',
   label: id,
