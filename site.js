@@ -82,9 +82,9 @@ function getTimeToFirstPaintIfSupported() {
 
 function sendTimeToFirstPaint(id) {
   var timeToFirstPaint = getTimeToFirstPaintIfSupported();
-  console.log(timeToFirstPaint);
+  //console.log(timeToFirstPaint);
  timeToFirstPaint = Math.round(timeToFirstPaint);
- console.log(timeToFirstPaint);
+ //console.log(timeToFirstPaint);
   analytics.track('Video site', {
   category: 'Time to paint',
   label: id,
