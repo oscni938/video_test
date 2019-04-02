@@ -58,7 +58,7 @@ function getTimeToFirstPaintIfSupported() {
   // Ignores browsers that don't support the Performance Timing API.
   if (window.performance && window.performance.timing) {
     var navTiming = window.performance.timing;
-    var navStart = navTiming.navigationStart;
+    //var navStart = navTiming.navigationStart;
     var fpTime;
 
     // If chrome, get first paint time from `chrome.loadTimes`.
@@ -74,8 +74,8 @@ function getTimeToFirstPaintIfSupported() {
       fpTime = navTiming.msFirstPaint;
     }
 
-    if (fpTime && navStart) {
-      return fpTime - navStart;
+    if (fpTime) {
+      return fpTime.startTime;
     }
   }
 }
