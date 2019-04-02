@@ -4,8 +4,7 @@
    METRIC_VALUE: 'dimension2'
  };
 
-  var d = new Date();
-  var t= d.getTime();
+
 
 if('serviceWorker' in navigator)
 {
@@ -86,7 +85,14 @@ function sendTimeToFirstPaint() {
   //}
 }
 function sendTimePageLoadTime(){
- console.log(window.performance.timing.domContentLoadedEventEnd- window.performance.timing.navigationStart);
+   var d = new Date();
+  var t= d.getTime();
+ var loadT = (window.performance.timing.domContentLoadedEventEnd- window.performance.timing.navigationStart);
+ analytics.track('Video site', {
+  category: 'Page load time',
+  label: t,
+  value: 50
+});
 }
 function getServiceWorkerStatus() {
   if ('serviceWorker' in navigator) {
