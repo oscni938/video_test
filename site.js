@@ -68,7 +68,7 @@ function getTimeToFirstPaintIfSupported() {
   }
 }
 
-function sendTimeToFirstPaint(var id) {
+function sendTimeToFirstPaint(id) {
   var timeToFirstPaint = getTimeToFirstPaintIfSupported();
   analytics.track('Video site', {
   category: 'Time to paint',
@@ -97,7 +97,7 @@ function sendTimeToFirstPaint(var id) {
     console.log("PAINT3");
   //}*/
 }
-function sendTimePageLoadTime(var id){
+function sendTimePageLoadTime(id){
 
  var loadT = (window.performance.timing.domContentLoadedEventEnd- window.performance.timing.navigationStart);
  analytics.track('Video site', {
