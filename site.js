@@ -26,7 +26,7 @@ if('serviceWorker' in navigator)
  var swStatus = getServiceWorkerStatus();
    analytics.track('Video site', {
   category: 'Time to paint',
-  label: id,
+  label: t,
   value: swStatus
 });
 }
