@@ -23,12 +23,7 @@ if('serviceWorker' in navigator)
     .then(reg => console.log('service worker: registered'))
     .catch(err => console.log(`service worker: error: ${err}`));
   });
- var swStatus = getServiceWorkerStatus();
-   analytics.track('Video site', {
-  category: 'Time to paint',
-  label: t,
-  value: swStatus
-});
+ sendServiceWorkerStatus(t);
 }
 
 displayView = function(view){
@@ -106,6 +101,17 @@ function sendTimePageLoadTime(id){
   value: loadT
 });
 }
+
+function sendServiceWorkerStatus(id)
+{
+  var swStatus = getServiceWorkerStatus();
+    analytics.track('Video site', {
+   category: 'Service Worker status',
+   label: id,
+   value: swStatus
+ });
+}
+
 function getServiceWorkerStatus() {
   if ('serviceWorker' in navigator) {
     return navigator.serviceWorker.controller ? 'controlled' : 'supported';
