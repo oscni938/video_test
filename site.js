@@ -22,8 +22,9 @@ if('serviceWorker' in navigator)
     .register('SW_stat.js')
     .then(reg => console.log('service worker: registered'))
     .catch(err => console.log(`service worker: error: ${err}`));
+    sendServiceWorkerStatus(t);
   });
- sendServiceWorkerStatus(t);
+
 }
 
 displayView = function(view){
