@@ -15,16 +15,16 @@ if('serviceWorker' in navigator)
 
     // Sends an event with the time to first paint data.
     var d = new Date();
-    var t= d.getTime();
+    t= d.getTime();
     sendTimeToFirstPaint(t);
     sendTimePageLoadTime(t);
     navigator.serviceWorker
     .register('SW_stat.js')
     .then(reg => console.log('service worker: registered'))
     .catch(err => console.log(`service worker: error: ${err}`));
-    sendServiceWorkerStatus(t);
+ 
   });
-
+   sendServiceWorkerStatus(t);
 }
 
 displayView = function(view){
