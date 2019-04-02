@@ -60,12 +60,12 @@ function getTimeToFirstPaintIfSupported() {
     var navTiming = window.performance.timing;
     //var navStart = navTiming.navigationStart;
     var fpTime;
-
+    var myTime;
     // If chrome, get first paint time from `chrome.loadTimes`.
     if (window.chrome && window.chrome.loadTimes) {
       fpTime = window.performance.getEntriesByType('paint');
       //fpTime = fpTime.startTime;
-      fpTime = fpTime.forEach((fpTime) =>{return fpTime.startTime;});
+      fpTime.forEach((fpTime) =>{ myTime = fpTime.startTime;});
     }
     // If IE/Edge, use the prefixed `msFirstPaint` property.
     // See http://msdn.microsoft.com/ff974719
@@ -74,7 +74,8 @@ function getTimeToFirstPaintIfSupported() {
     }
 
     if (fpTime) {
-      return fpTime;
+     console.log("kappa");
+      return myTime;
     }
   }
 }
