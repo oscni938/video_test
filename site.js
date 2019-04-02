@@ -125,6 +125,7 @@ function sendTimePageLoadTime(id){
 function sendServiceWorkerStatus(id)
 {
   var swStatus = getServiceWorkerStatus();
+ console.log('Service Worker status:'+swStatus);
     analytics.track('Video site', {
    category: 'Service Worker status:'+swStatus,
    label: id,
