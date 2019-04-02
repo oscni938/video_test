@@ -14,13 +14,21 @@ if('serviceWorker' in navigator)
     ga('send', 'pageview');
 
     // Sends an event with the time to first paint data.
-    sendTimeToFirstPaint();
-    sendTimePageLoadTime();
+    var d = new Date();
+    var t= d.getTime();
+    sendTimeToFirstPaint(t);
+    sendTimePageLoadTime(t);
     navigator.serviceWorker
     .register('SW_stat.js')
     .then(reg => console.log('service worker: registered'))
     .catch(err => console.log(`service worker: error: ${err}`));
   });
+ var swStatus = getServiceWorkerStatus();
+   analytics.track('Video site', {
+  category: 'Time to paint',
+  label: id,
+  value: swStatus
+});
 }
 
 displayView = function(view){
@@ -60,9 +68,14 @@ function getTimeToFirstPaintIfSupported() {
   }
 }
 
-function sendTimeToFirstPaint() {
+function sendTimeToFirstPaint(var id) {
   var timeToFirstPaint = getTimeToFirstPaintIfSupported();
-    console.log("PAINT1");
+  analytics.track('Video site', {
+  category: 'Time to paint',
+  label: id,
+  value: timeToFirstPaint
+});
+   /* console.log("PAINT1");
   //if (timeToFirstPaint) {
     console.log("PAINT2");
     var fields = {
@@ -82,16 +95,15 @@ function sendTimeToFirstPaint() {
     ga('send', 'event', fields);
     //ga('set','metric1', timeToFirstPaint);
     console.log("PAINT3");
-  //}
+  //}*/
 }
-function sendTimePageLoadTime(){
-   var d = new Date();
-  var t= d.getTime();
+function sendTimePageLoadTime(var id){
+
  var loadT = (window.performance.timing.domContentLoadedEventEnd- window.performance.timing.navigationStart);
  analytics.track('Video site', {
   category: 'Page load time',
-  label: t,
-  value: 50
+  label: id,
+  value: loadT
 });
 }
 function getServiceWorkerStatus() {
