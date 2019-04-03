@@ -56,6 +56,24 @@ window.onload = function(){
   ga('set', customDimensions.SERVICE_WORKER_STATUS, getServiceWorkerStatus());
 }
 
+  window.addEventListener('offline', () =>
+  {
+   analytics.track('Video site', {
+  category: 'online status',
+  label: 'offline',
+  value: 1
+    );
+  });
+   
+  window.addEventListener('online', () =>
+  {
+   analytics.track('Video site', {
+  category: 'online status',
+  label: 'online',
+  value: 1
+    );
+  });
+
 function getTimeToFirstPaintIfSupported() {
   // Ignores browsers that don't support the Performance Timing API.
   if (window.performance && window.performance.timing) {
