@@ -62,7 +62,6 @@ window.onload = function(){
   category: 'online status',
   label: 'offline',
   value: 1
-    );
   });
    
   window.addEventListener('online', () =>
@@ -71,7 +70,6 @@ window.onload = function(){
   category: 'online status',
   label: 'online',
   value: 1
-    );
   });
 
 function getTimeToFirstPaintIfSupported() {
