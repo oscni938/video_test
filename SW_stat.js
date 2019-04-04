@@ -64,7 +64,13 @@ self.addEventListener('fetch', e =>
     );
   }
   console.log("service worker: fetching");
-  e.respondWith(
+  /*e.respondWith(
     fetch(e.request).catch(() => caches.match(e.request))
-  );
+  );*/
+  event.respondWith(
+    // Try the cache
+    caches.match(event.request).then(function(response) {
+      // Fall back to network
+      return response || fetch(event.request);
+    });
 });
