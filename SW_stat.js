@@ -72,5 +72,6 @@ self.addEventListener('fetch', e =>
     caches.match(event.request).then(function(response) {
       // Fall back to network
       return response || fetch(event.request);
-    });
+    })
+  );
 });
