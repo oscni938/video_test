@@ -67,11 +67,11 @@ self.addEventListener('fetch', e =>
   /*e.respondWith(
     fetch(e.request).catch(() => caches.match(e.request))
   );*/
-  event.respondWith(
+  e.respondWith(
     // Try the cache
-    caches.match(event.request).then(function(response) {
+    caches.match(e.request).then(function(response) {
       // Fall back to network
-      return response || fetch(event.request);
+      return response || fetch(e.request);
     })
   );
 });
