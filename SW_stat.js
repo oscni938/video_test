@@ -1,4 +1,4 @@
-const cacheName = "newtab-static-qfhluc";
+const cacheName = "s";
 
 const cacheAssets = [
   'video_site.html',
