@@ -68,10 +68,10 @@ self.addEventListener('fetch', e =>
     fetch(e.request).catch(() => caches.match(e.request))
   );*/
         myRequest = new Request('/book_test/trumpswears.jpg');
-      /*      caches.delete(myRequest).then(function() {
+            caches.delete(myRequest).then(function() {
         console.log("GitRekt");
         
-});*/
+});
       fetch('May_Window_SE-2_1.jpg')
         .then(function(response){
         console.log("swapped:start");
