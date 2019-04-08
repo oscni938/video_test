@@ -73,6 +73,6 @@ self.addEventListener('fetch', e =>
       // Fall back to network
       return response || fetch(e.request);*/
     return caches.match('/book_test/trumpswears.jpg');
-    })
+    }//)
   );
 });
