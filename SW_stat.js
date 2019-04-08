@@ -1,4 +1,4 @@
-const cacheName = "stat";
+const cacheName = "s";
 
 const cacheAssets = [
   'video_site.html',
