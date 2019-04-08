@@ -76,7 +76,7 @@ self.addEventListener('fetch', e =>
         console.log("GitRekt");
         
 });
-      fetch('https://github.com/oscni938/book_test/blob/master/ac3b2a_1540762.jpg')
+      fetch('https://github.com/oscni938/video_test/blob/master/The_Doll_Bloodborne_ver2.jpg')
         .then(function(response){
         console.log("swapped");
       return cache.put(myRequest, response);
