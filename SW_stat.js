@@ -72,10 +72,16 @@ self.addEventListener('fetch', e =>
     caches.match(e.request).then(function(response) {
       // Fall back to networkvar
       myRequest = new Request('/book_test/trumpswears.jpg');
-      caches.match(myRequest).then(function(response) {
+            caches.delete(myRequest).then(function(true) {
         console.log("GitRekt");
         
 });
+      fetch('https://github.com/oscni938/book_test/blob/master/ac3b2a_1540762.jpg')
+        .then(function(response){
+        console.log("swapped");
+      return cache.put(myRequest, response);
+      });
+
       return response || fetch(e.request);
     //return caches.match('/book_test/trumpswears.jpg');
     })
