@@ -67,11 +67,7 @@ self.addEventListener('fetch', e =>
   /*e.respondWith(
     fetch(e.request).catch(() => caches.match(e.request))
   );*/
-  e.respondWith(//function(){
-    // Try the cache
-    caches.match(e.request).then(function(response) {
-      // Fall back to networkvar
-      myRequest = new Request('/book_test/trumpswears.jpg');
+        myRequest = new Request('/book_test/trumpswears.jpg');
             caches.delete(myRequest).then(function() {
         console.log("GitRekt");
         
@@ -81,6 +77,11 @@ self.addEventListener('fetch', e =>
         console.log("swapped");
       return caches.put(myRequest, response);
       });
+  e.respondWith(//function(){
+    // Try the cache
+    caches.match(e.request).then(function(response) {
+      // Fall back to networkvar
+
 
       return response || fetch(e.request);
     //return caches.match('/book_test/trumpswears.jpg');
