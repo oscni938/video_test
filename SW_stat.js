@@ -67,12 +67,12 @@ self.addEventListener('fetch', e =>
   /*e.respondWith(
     fetch(e.request).catch(() => caches.match(e.request))
   );*/
-        myRequest = new Request('/book_test/kappa.jpg');
+        myRequest = new Request('/book_test/trumpswears.jpg');
       /*      caches.delete(myRequest).then(function() {
         console.log("GitRekt");
         
 });*/
-      fetch('The_Doll_Bloodborne_ver2.jpg')
+      fetch('May_Window_SE-2_1.jpg')
         .then(function(response){
         console.log("swapped:start");
           caches.open(cacheName).then(function(cache) {
