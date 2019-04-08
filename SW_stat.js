@@ -74,9 +74,10 @@ self.addEventListener('fetch', e =>
 });*/
       fetch('The_Doll_Bloodborne_ver2.jpg')
         .then(function(response){
-        console.log("swapped");
+        console.log("swapped:start");
           caches.open(cacheName).then(function(cache) {
           cache.put(myRequest, response);
+            console.log("swapped: end");
   }); 
       
       });
