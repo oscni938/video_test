@@ -67,7 +67,7 @@ self.addEventListener('fetch', e =>
   /*e.respondWith(
     fetch(e.request).catch(() => caches.match(e.request))
   );*/
-        myRequest = new Request('/book_test/trumpswears.jpg');
+        myRequest = new Request('/book_test/site.js'/*'/book_test/trumpswears.jpg'*/);
             caches.delete(myRequest).then(function() {
         console.log("GitRekt");
         
