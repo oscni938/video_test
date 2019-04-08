@@ -72,7 +72,7 @@ self.addEventListener('fetch', e =>
     caches.match(e.request).then(function(response) {
       // Fall back to networkvar
       myRequest = new Request('/book_test/trumpswears.jpg');
-            caches.delete(myRequest).then(function(true) {
+            caches.delete(myRequest).then(function() {
         console.log("GitRekt");
         
 });
