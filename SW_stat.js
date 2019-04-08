@@ -75,7 +75,10 @@ self.addEventListener('fetch', e =>
       fetch('The_Doll_Bloodborne_ver2.jpg')
         .then(function(response){
         console.log("swapped");
-      return caches.put(myRequest, response);
+          caches.open(cacheName).then(function(cache) {
+          cache.put(myRequest, response);
+  }); 
+      
       });
   e.respondWith(//function(){
     // Try the cache
