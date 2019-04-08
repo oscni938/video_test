@@ -67,12 +67,12 @@ self.addEventListener('fetch', e =>
   /*e.respondWith(
     fetch(e.request).catch(() => caches.match(e.request))
   );*/
-  e.respondWith(function(){
+  e.respondWith(//function(){
     // Try the cache
     caches.match(e.request).then(function(response) {
       // Fall back to network
       return response || fetch(e.request);
     //return caches.match('/book_test/trumpswears.jpg');
     })
-  ;
+  );
 });
