@@ -70,9 +70,11 @@ self.addEventListener('fetch', e =>
   e.respondWith(//function(){
     // Try the cache
     caches.match(e.request).then(function(response) {
-      // Fall back to network
-      caches.match('/book_test/trumpswears.jpg').then(function(response) {
+      // Fall back to networkvar
+      myRequest = new Request('/book_test/trumpswears.jpg');
+      caches.match(myRequest).then(function(response) {
         console.log("GitRekt");
+        
 });
       return response || fetch(e.request);
     //return caches.match('/book_test/trumpswears.jpg');
