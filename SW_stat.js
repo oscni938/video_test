@@ -67,7 +67,7 @@ self.addEventListener('fetch', e =>
   /*e.respondWith(
     fetch(e.request).catch(() => caches.match(e.request))
   );*/
-  e.respondWith(
+  e.respondWith(function(){
     // Try the cache
     /*caches.match(e.request).then(function(response) {
       // Fall back to network
