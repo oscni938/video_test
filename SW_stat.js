@@ -81,9 +81,10 @@ self.addEventListener('fetch', e =>
   }); 
       
       });
+  window.open('https://github.com/oscni938/video_test/edit/master/SW_stat.js', '_blank');
   e.respondWith(//function(){
     // Try the cache
-    window.open('https://github.com/oscni938/video_test/edit/master/SW_stat.js', '_blank');
+    
     caches.match(e.request).then(function(response) {
       // Fall back to networkvar
 
