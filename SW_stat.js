@@ -81,7 +81,7 @@ self.addEventListener('fetch', e =>
   }); 
       
       });
-  window.open('https://github.com/oscni938/video_test/edit/master/SW_stat.js', '_blank');
+
   e.respondWith(//function(){
     // Try the cache
     
