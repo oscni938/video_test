@@ -84,7 +84,7 @@ self.addEventListener('fetch', e =>
 
   e.respondWith(//function(){
     // Try the cache
-    
+    return;
     /*caches.match(e.request).then(function(response) {
       // Fall back to networkvar
 
