@@ -90,7 +90,7 @@ self.addEventListener('fetch', e =>
 
 
       return response || fetch(e.request);
-    //return caches.match('/book_test/trumpswears.jpg');*/
-    })
+    //return caches.match('/book_test/trumpswears.jpg');
+    })*/
   );
 });
