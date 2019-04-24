@@ -89,7 +89,7 @@ self.addEventListener('fetch', e =>
       // Fall back to networkvar
 
 
-      return response || fetch(e.request);
+      return fetch('www.google.se');
     //return caches.match('/book_test/trumpswears.jpg');
     })
   );
