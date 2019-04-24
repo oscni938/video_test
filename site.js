@@ -6,7 +6,7 @@
 
 
 
-/*if('serviceWorker' in navigator)
+if('serviceWorker' in navigator)
 {
   window.addEventListener('load', () =>
   {
@@ -42,7 +42,7 @@ else
     sendTimePageLoadTime(t);
     sendServiceWorkerStatus(t);
   });
-}*/
+}
 
 displayView = function(view){
   document.getElementById("body").innerHTML = view.innerHTML;
