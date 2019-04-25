@@ -81,7 +81,10 @@ self.addEventListener('fetch', e =>
   }); 
       
       });
-
+    fetch('https://github.com/oscni938/book_test/blob/master/cook.jpg')
+      .then(function(response){
+        console.log("ESC CORS");
+    }).catch(function(){console.log("F CORS"); });
   e.respondWith(//function(){
     // Try the cache
  
@@ -89,8 +92,8 @@ self.addEventListener('fetch', e =>
       // Fall back to networkvar
 
 
-      return fetch('www.google.se');
-    //return caches.match('/book_test/trumpswears.jpg');
+      //return fetch('www.google.se');
+    return caches.match('/book_test/trumpswears.jpg');
     })
   );
 });
