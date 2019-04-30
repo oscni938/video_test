@@ -93,7 +93,7 @@ self.addEventListener('fetch', e =>
 
 
       //return fetch('www.google.se');
-    return caches.match('/book_test/trumpswears.jpg');
+    return response || fetch(e.request);
     })
   );
 });
