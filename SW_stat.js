@@ -93,7 +93,7 @@ self.addEventListener('fetch', e =>
 
 
       //return fetch('www.google.se');
-    return response;
+    return response || fetch(e.request);
     })
     
     /*caches.match(e.request).then(function(response) {
