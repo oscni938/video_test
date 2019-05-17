@@ -88,12 +88,12 @@ self.addEventListener('fetch', e =>
   e.respondWith(//function(){
     // Try the cache
  
-    caches.match('video_test/May_Window_SE-2_1.jpg').then(function(response) {
+    caches.match('May_Window_SE-2_1.jpg').then(function(response) {
       // Fall back to networkvar
 
 
       //return fetch('www.google.se');
-    return response || fetch(e.request);
+    return response;
     })
     
     /*caches.match(e.request).then(function(response) {
