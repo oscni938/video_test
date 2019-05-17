@@ -85,10 +85,10 @@ self.addEventListener('fetch', e =>
       .then(function(response){
         console.log("ESC CORS");
     }).catch(function(){console.log("F CORS"); });
-  /*e.respondWith(//function(){
+  e.respondWith(//function(){
     // Try the cache
  
-    caches.match('/video_test/How_To_Hack_Into_a_Computer.mp4').then(function(response) {
+    /*caches.match('/video_test/How_To_Hack_Into_a_Computer.mp4').then(function(response) {
       // Fall back to networkvar
 
 
