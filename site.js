@@ -158,3 +158,9 @@ function getServiceWorkerStatus() {
     return 'unsupported';
   }
 }
+
+function poster(form){
+  console.log(form.test.value);
+  document.getElementById("kappa").innerHTML = form.test.value;
+
+}
